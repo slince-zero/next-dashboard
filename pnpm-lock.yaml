@@ -49,7 +49,7 @@ dependencies:
     specifier: 5.5.2
     version: 5.5.2
   use-debounce:
-    specifier: ^10.0.1
+    specifier: ^10.0.4
     version: 10.0.4(react@19.0.0-rc-cd22717c-20241013)
   zod:
     specifier: ^3.23.8
@@ -731,6 +731,7 @@ packages:
 
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+    requiresBuild: true
     dev: false
 
   /color-string@1.9.1:
