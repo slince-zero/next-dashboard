@@ -1,5 +1,6 @@
 import { PencilIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import { deleteInvoice } from '@/app/lib/actions'
 
 export function CreateInvoice() {
   return (
@@ -23,12 +24,19 @@ export function UpdateInvoice({ id }: { id: string }) {
 }
 
 export function DeleteInvoice({ id }: { id: string }) {
+  // 用 bind 的缘故，主要是为了传递参数，确保表单提交以后，会触发 deleteInvoice，而 action 又是通过函数来触发的
+  const deleteInvoiceWithId = deleteInvoice.bind(null, id)
+
   return (
     <>
-      <button className='rounded-md border p-2 hover:bg-gray-100'>
-        <span className='sr-only'>Delete</span>
-        <TrashIcon className='w-5' />
-      </button>
+      <form action={deleteInvoiceWithId}>
+        <button
+          type='submit'
+          className='rounded-md border p-2 hover:bg-gray-100'>
+          <span className='sr-only'>Delete</span>
+          <TrashIcon className='w-4' />
+        </button>
+      </form>
     </>
   )
 }
