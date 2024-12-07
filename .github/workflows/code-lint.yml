@@ -25,4 +25,4 @@ on:
         run: pnpm install
 
       - name: 👽 Run ESLint
-        run: pnpm lint
+        run: pnpm run lint
